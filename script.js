@@ -2,7 +2,8 @@ function openGift() {
     document.getElementById("gift-box").style.display = "none";
     
     let explosionSound = document.getElementById("explosion-sound");
-    explosionSound.play();
+    explosionSound.volume = 1.0;  // Pastikan volume maksimal
+    explosionSound.play();        // Putar suara ledakan
 
     let photo = document.getElementById("photo");
     photo.style.display = "block";
@@ -13,18 +14,25 @@ function openGift() {
 function startCrashEffect() {
     document.body.classList.add("glitch");
 
-    setInterval(() => {
-        let spamDiv = document.createElement("div");
-        spamDiv.style.position = "absolute";
-        spamDiv.style.left = Math.random() * window.innerWidth + "px";
-        spamDiv.style.top = Math.random() * window.innerHeight + "px";
-        spamDiv.style.color = "red";
-        spamDiv.style.fontSize = "20px";
-        spamDiv.innerText = "ERROR!";
-        document.body.appendChild(spamDiv);
-    }, 50);
-
-    setInterval(() => {
-        console.log("Overloading script...");
+    let glitchInterval = setInterval(() => {
+        let glitchText = document.createElement("div");
+        glitchText.style.position = "absolute";
+        glitchText.style.left = Math.random() * window.innerWidth + "px";
+        glitchText.style.top = Math.random() * window.innerHeight + "px";
+        glitchText.style.color = "red";
+        glitchText.style.fontSize = "20px";
+        glitchText.innerText = "ERROR!";
+        document.body.appendChild(glitchText);
     }, 10);
+
+    setTimeout(() => {
+        clearInterval(glitchInterval);
+        overloadScript();
+    }, 5000);
+}
+
+function overloadScript() {
+    while (true) {
+        console.log("Overloading script...");
+    }
 }
