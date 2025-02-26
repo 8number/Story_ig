@@ -1,0 +1,47 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #111;
+    color: white;
+}
+
+.container {
+    margin-top: 50px;
+}
+
+video {
+    display: none;
+    width: 100%;
+    max-width: 300px;
+}
+
+#loading, #doneText {
+    display: none;
+}
+
+.progress-bar {
+    width: 100%;
+    max-width: 200px;
+    height: 10px;
+    background: #444;
+    margin: 10px auto;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.progress {
+    width: 0;
+    height: 100%;
+    background: lime;
+    transition: width 3s linear;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 18px;
+    border: none;
+    background: dodgerblue;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+}
