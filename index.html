@@ -1,12 +1,23 @@
-<html>
-<body style="text-align:center; font-family:sans-serif;">
-    <h2>🔥 Halo, <span id="name"></span>! 🔥</h2>
-    <p>Aku punya sesuatu spesial buat kamu...</p>
-
-    <script>
-        const params = new URLSearchParams(window.location.search);
-        const name = params.get("nama") || "Teman";
-        document.getElementById("name").textContent = name;
-    </script>
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Website</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <button id="startButton">Mulai</button>
+        <video id="video" autoplay></video>
+        <div id="loading">
+            <p>Mengunggah...</p>
+            <div class="progress-bar">
+                <div class="progress"></div>
+            </div>
+        </div>
+        <p id="doneText">Mengunggah selesai!</p>
+    </div>
+    <script src="script.js"></script>
 </body>
-</html>
+        </html>
