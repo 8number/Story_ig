@@ -1,0 +1,12 @@
+<html>
+<body style="text-align:center; font-family:sans-serif;">
+    <h2>🔥 Halo, <span id="name"></span>! 🔥</h2>
+    <p>Aku punya sesuatu spesial buat kamu...</p>
+
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const name = params.get("nama") || "Teman";
+        document.getElementById("name").textContent = name;
+    </script>
+</body>
+</html>
