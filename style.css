@@ -17,7 +17,8 @@ body {
 
 canvas {
     display: block;
-    background: #111;
+    background: #222;
+    border: 2px solid white;
 }
 
 #virus-warning, #prank-screen {
@@ -59,4 +60,10 @@ canvas {
     50% { transform: translate(2px, -2px); }
     75% { transform: translate(-2px, 2px); }
     100% { transform: translate(0, 0); }
+}
+
+#prank-screen img {
+    width: 50%;
+    max-width: 300px;
+    border-radius: 10px;
 }
