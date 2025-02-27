@@ -1,19 +1,19 @@
 const canvas = document.getElementById("gameCanvas");
 const ctx = canvas.getContext("2d");
 
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
+canvas.width = 600;
+canvas.height = 400;
 
-let player = { x: 50, y: 50, size: 20 };
-let virus = { x: 300, y: 300, size: 20, speed: 2 };
+let player = { x: 50, y: 50, size: 20, speed: 5 };
+let virus = { x: 300, y: 300, size: 20, speed: 1.2 };
 
 document.addEventListener("keydown", movePlayer);
 
 function movePlayer(event) {
-    if (event.key === "ArrowUp") player.y -= 10;
-    if (event.key === "ArrowDown") player.y += 10;
-    if (event.key === "ArrowLeft") player.x -= 10;
-    if (event.key === "ArrowRight") player.x += 10;
+    if (event.key === "ArrowUp" && player.y > 0) player.y -= player.speed;
+    if (event.key === "ArrowDown" && player.y < canvas.height - player.size) player.y += player.speed;
+    if (event.key === "ArrowLeft" && player.x > 0) player.x -= player.speed;
+    if (event.key === "ArrowRight" && player.x < canvas.width - player.size) player.x += player.speed;
 }
 
 function update() {
@@ -21,7 +21,7 @@ function update() {
     let dy = player.y - virus.y;
     let distance = Math.sqrt(dx * dx + dy * dy);
 
-    if (distance < 5) {
+    if (distance < 20) {
         document.getElementById("game-container").style.display = "none";
         document.getElementById("virus-warning").classList.remove("hidden");
     }
