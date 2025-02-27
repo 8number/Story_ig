@@ -1,0 +1,62 @@
+body {
+    margin: 0;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+    background: black;
+    color: white;
+    text-align: center;
+}
+
+#game-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+}
+
+canvas {
+    display: block;
+    background: #111;
+}
+
+#virus-warning, #prank-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: black;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#virus-warning h1, #prank-screen h1 {
+    font-size: 2rem;
+    animation: glitch 0.5s infinite;
+}
+
+#virus-warning button {
+    padding: 10px 20px;
+    font-size: 1.5rem;
+    background: red;
+    border: none;
+    color: white;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.hidden {
+    display: none;
+}
+
+@keyframes glitch {
+    0% { transform: translate(2px, 2px); }
+    25% { transform: translate(-2px, -2px); }
+    50% { transform: translate(2px, -2px); }
+    75% { transform: translate(-2px, 2px); }
+    100% { transform: translate(0, 0); }
+}
